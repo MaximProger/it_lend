@@ -1,0 +1,55 @@
+// USER VARIABLES SECTION
+
+$text: #677897;
+$blue: #91b7dc;
+$white: #f6f9fd;
+$gradient: linear-gradient(
+  44.91deg,
+  #102397 -5.12%,
+  #187adf 48.89%,
+  #00eaf8 92.6%
+);
+
+// Max-width
+$tablet: 1199px;
+$mobile: 767px;
+$mobile-sm: 361px;
+
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: local($fname), url($furl) format("truetype");
+    // font-display: swap; // Uncomment to initially display system fonts
+  }
+}
+
+@include font("Montserrat", normal, 400, "../fonts/Montserrat-Regular.ttf");
+@include font("Montserrat", normal, 500, "../fonts/Montserrat-Medium.ttf");
+@include font("Montserrat", normal, 700, "../fonts/Montserrat-Bold.ttf");
+
+.no-xl {
+  display: none;
+}
+
+@media (max-width: $tablet) {
+  .no-md {
+    display: none;
+  }
+
+  .md {
+    display: inline-block;
+  }
+}
+
+@media (max-width: $mobile) {
+  .no-xs {
+    display: none;
+  }
+
+  .xs {
+    display: inline-block;
+  }
+}
