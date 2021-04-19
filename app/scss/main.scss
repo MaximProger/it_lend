@@ -532,6 +532,7 @@ b {
   width: fit-content;
 
   &--single {
+    margin: 0 10px;
     .portfolio__item {
       width: 685px;
       height: 948px;
@@ -604,7 +605,7 @@ b {
 
 .blog__img {
   display: inline-block;
-  width: 445px;
+  width: 100%;
   height: 232px;
   max-width: 445px;
   max-height: 232px;
