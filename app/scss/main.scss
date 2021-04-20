@@ -727,11 +727,12 @@ b {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 104px 142px;
 }
 
 .modals__wrapper {
   width: 100%;
+  padding: 104px 142px;
+  position: relative;
 }
 
 .modals__title {
@@ -797,6 +798,75 @@ b {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.01em;
+}
+
+.modals__close {
+  width: 29px;
+  padding: 8px 0;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 1;
+  font-size: 0;
+  color: transparent;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+}
+
+.modals__close:focus {
+  outline: 0;
+}
+
+.modals__close__item {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #3f8ae0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  transition: background 0.2s linear;
+  border-radius: 7px;
+}
+
+.modals__close__item::before,
+.modals__close__item::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #3f8ae0;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transition: transform 0.2s linear;
+  border-radius: 7px;
+}
+
+.modals__close__item::before {
+  top: -8px;
+}
+
+.modals__close__item::after {
+  bottom: -8px;
+}
+
+.modals__close.active .modals__close__item {
+  background: none;
+}
+
+.modals__close.active .modals__close__item:before {
+  transform-origin: left top;
+  transform: rotate(45deg) translateX(-2px);
+}
+
+.modals__close.active .modals__close__item:after {
+  transform-origin: left bottom;
+  transform: rotate(-45deg) translateX(-3px);
 }
 // Modals & mask END
 
@@ -1148,6 +1218,9 @@ b {
     width: 100%;
     border-radius: 7px;
     height: auto;
+  }
+
+  .modals__wrapper {
     padding: 30px 15px;
   }
 
@@ -1170,6 +1243,11 @@ b {
 
   .message__text {
     margin-top: 0;
+  }
+
+  .modals__close {
+    top: 15px;
+    right: 7px;
   }
   // Modals END
 }

@@ -1,9 +1,18 @@
 $(document).ready(function () {
-  // Закрытие модального окна, по клику на маску
-  $(".mask").click(() => {
+  // Закрытие модального окна
+  function closeModal() {
     $(".mask").fadeOut();
     $(".modals").slideUp();
     $("body").removeClass("fixed");
+  }
+
+  $(".mask").click(() => {
+    closeModal();
+  });
+
+  $("#closeModal").click((evt) => {
+    evt.preventDefault();
+    closeModal();
   });
 
   // Открытие модального окна
